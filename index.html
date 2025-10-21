@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LinkedIn Text Formatter - Format your LinkedIn posts with ease. A powerful Chrome extension for professional text formatting.">
+    <title>LinkedIn Text Formatter - Chrome Extension</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M9 7H7V17H9V7Z" fill="currentColor"/>
+                    <path d="M17 11.5C17 10.1193 15.8807 9 14.5 9C13.1193 9 12 10.1193 12 11.5V17H14V11.5C14 11.2239 14.2239 11 14.5 11C14.7761 11 15 11.2239 15 11.5V17H17V11.5Z" fill="currentColor"/>
+                </svg>
+                <span class="logo-text">LinkedIn Text Formatter</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How it Works</a>
+                <a href="#cta" class="btn-nav">Get Notified</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Coming Soon</div>
+                <h1 class="hero-title">
+                    Format Your LinkedIn Posts
+                    <span class="gradient-text">Like a Pro</span>
+                </h1>
+                <p class="hero-description">
+                    The powerful Chrome extension that brings professional text formatting directly to LinkedIn.
+                    Create eye-catching posts with bold, italic, lists, and more - all without leaving LinkedIn.
+                </p>
+                <div class="hero-cta">
+                    <a href="#cta" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Notify Me When It Launches
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.752 11.168L10.232 8.488C9.73605 8.19945 9.11734 8.56944 9.11734 9.14186V14.8581C9.11734 15.4306 9.73605 15.8006 10.232 15.512L14.752 12.832C15.2329 12.5533 15.2329 11.4467 14.752 11.168Z" fill="currentColor"/>
+                            <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Watch Demo
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="mockup-container">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-buttons">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="browser-url">linkedin.com/feed</div>
+                        </div>
+                        <div class="browser-content">
+                            <div class="linkedin-post">
+                                <div class="post-header">
+                                    <div class="avatar"></div>
+                                    <div class="post-meta">
+                                        <div class="name">Your Name</div>
+                                        <div class="time">Just now</div>
+                                    </div>
+                                </div>
+                                <div class="post-content">
+                                    <div class="formatted-text">
+                                        <p><strong>Excited to share</strong> my latest project!</p>
+                                        <p>Key features:</p>
+                                        <p>• <em>Bold</em> and <em>italic</em> text</p>
+                                        <p>• Bullet points and lists</p>
+                                        <p>• Professional formatting</p>
+                                    </div>
+                                </div>
+                                <div class="formatting-toolbar">
+                                    <button class="format-btn active" title="Bold">B</button>
+                                    <button class="format-btn" title="Italic">I</button>
+                                    <button class="format-btn" title="List">≡</button>
+                                    <button class="format-btn" title="Heading">H</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-element element-1">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 7H17M7 12H17M7 17H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="floating-element element-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 5H7C5.89543 5 5 5.89543 5 7V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V7C19 5.89543 18.1046 5 17 5H15M9 5C9 6.10457 9.89543 7 11 7H13C14.1046 7 15 6.10457 15 5M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5M12 12H15M12 16H15M9 12H9.01M9 16H9.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-description">Everything you need to create professional, formatted LinkedIn posts</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M7 5H17M7 9H17M7 13H17M7 17H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Rich Text Formatting</h3>
+                    <p class="feature-description">Apply bold, italic, underline, and other text styles directly in LinkedIn posts</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M9 5L7 7M7 7L5 9M7 7V13M15 5L17 7M17 7L19 9M17 7V13M9 19L7 17M7 17L5 15M7 17V11M15 19L17 17M17 17L19 15M17 17V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Seamless Integration</h3>
+                    <p class="feature-description">Works directly within LinkedIn - no copy-paste, no external tools needed</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-description">Format your text instantly with keyboard shortcuts and one-click options</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Lists & Bullets</h3>
+                    <p class="feature-description">Create organized bullet points and numbered lists for better readability</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M7 8H17M7 12H17M7 16H17M3 8H4M3 12H4M3 16H4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Templates</h3>
+                    <p class="feature-description">Save and reuse your favorite formatting templates for consistent posts</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 15V17M6 21H18C19.1046 21 20 20.1046 20 19V13C20 11.8954 19.1046 11 18 11H6C4.89543 11 4 11.8954 4 13V19C4 20.1046 4.89543 21 6 21ZM16 11V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V11H16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Privacy First</h3>
+                    <p class="feature-description">All formatting happens locally - your content never leaves your browser</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-description">Get started in three simple steps</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Install Extension</h3>
+                        <p class="step-description">Add the LinkedIn Text Formatter to your Chrome browser with one click from the Chrome Web Store</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Open LinkedIn</h3>
+                        <p class="step-description">Navigate to LinkedIn and start creating a new post - the formatting toolbar appears automatically</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Format & Post</h3>
+                        <p class="step-description">Select your text and apply formatting with our intuitive toolbar or keyboard shortcuts. Post with confidence!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Be the First to Know</h2>
+                <p class="cta-description">Get notified when LinkedIn Text Formatter launches. Join our early access list!</p>
+                <form class="cta-form" id="notifyForm">
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            Notify Me
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="form-note">We'll only email you when we launch. No spam, ever.</p>
+                </form>
+                <div class="success-message" id="successMessage">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Thanks! We'll notify you when we launch.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M9 7H7V17H9V7Z" fill="currentColor"/>
+                        <path d="M17 11.5C17 10.1193 15.8807 9 14.5 9C13.1193 9 12 10.1193 12 11.5V17H14V11.5C14 11.2239 14.2239 11 14.5 11C14.7761 11 15 11.2239 15 11.5V17H17V11.5Z" fill="currentColor"/>
+                    </svg>
+                    <span>LinkedIn Text Formatter</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How it Works</a>
+                    <a href="#cta">Get Notified</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 LinkedIn Text Formatter. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
