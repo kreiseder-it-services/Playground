@@ -31,10 +31,11 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// ===== Email Form Submission =====
+// ===== Email Form Submission with Formspree =====
 const notifyForm = document.getElementById('notifyForm');
 const emailInput = document.getElementById('email');
 const successMessage = document.getElementById('successMessage');
+const submitBtn = document.getElementById('submitBtn');
 
 notifyForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -46,20 +47,53 @@ notifyForm.addEventListener('submit', async (e) => {
         return;
     }
 
-    // Hide form and show success message
-    notifyForm.style.display = 'none';
-    successMessage.classList.add('show');
+    // Disable button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending...';
 
-    // Store email in localStorage (in production, you'd send to a backend)
-    const emails = JSON.parse(localStorage.getItem('waitlistEmails') || '[]');
-    if (!emails.includes(email)) {
-        emails.push(email);
-        localStorage.setItem('waitlistEmails', JSON.stringify(emails));
+    // Get form data
+    const formData = new FormData(notifyForm);
+
+    try {
+        // Submit to Formspree
+        const response = await fetch(notifyForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            // Success! Hide form and show success message
+            notifyForm.style.display = 'none';
+            successMessage.classList.add('show');
+
+            // Store email in localStorage for analytics
+            const emails = JSON.parse(localStorage.getItem('waitlistEmails') || '[]');
+            if (!emails.includes(email)) {
+                emails.push(email);
+                localStorage.setItem('waitlistEmails', JSON.stringify(emails));
+            }
+
+            console.log('Email successfully submitted to Formspree');
+        } else {
+            // Error from Formspree
+            const data = await response.json();
+            if (data.errors) {
+                alert('Error: ' + data.errors.map(error => error.message).join(', '));
+            } else {
+                alert('Oops! There was a problem submitting your form. Please try again.');
+            }
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Notify Me <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        }
+    } catch (error) {
+        console.error('Form submission error:', error);
+        alert('Oops! There was a problem submitting your form. Please try again.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Notify Me <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     }
-
-    // Log for development purposes
-    console.log('Email submitted:', email);
-    console.log('All waitlist emails:', emails);
 });
 
 // Email validation helper

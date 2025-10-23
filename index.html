@@ -217,10 +217,13 @@
             <div class="cta-content">
                 <h2 class="cta-title">Be the First to Know</h2>
                 <p class="cta-description">Get notified when LinkedIn Text Formatter launches. Join our early access list!</p>
-                <form class="cta-form" id="notifyForm">
+                <form class="cta-form" id="notifyForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="hidden" name="_subject" value="New LinkedIn Text Formatter Signup!">
+                    <input type="hidden" name="_next" value="#cta">
+                    <input type="hidden" name="_autoresponse" value="Thanks for signing up! We'll notify you as soon as LinkedIn Text Formatter launches.">
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Enter your email address" required>
-                        <button type="submit" class="btn btn-primary">
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
                             Notify Me
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
