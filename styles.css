@@ -108,7 +108,8 @@ html {
 .logo-icon {
     width: 32px;
     height: 32px;
-    color: var(--primary-color);
+    display: block;
+    border-radius: 4px;
 }
 
 .nav-links {
